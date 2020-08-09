@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ASH CAR RENTAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+nav{
+  background: black;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  text-decoration: none;
+  color: purple;
+  font-size: 33px;
+  line-height: 80px;
+  padding: 0 140px;
+  font-weight: 600;
+  font-family: 'quicksand', sans-serif;
+}
+nav ul{
+  float: right;
+  margin-right: 60px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 2px;
+}
+nav ul li a{
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  font-family: 'quicksand', sans-serif;
+}
+a.active,a:hover{
+  background: purple;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 13px;
+    padding-left: 25px;
+    text-decoration: none;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+    margin-right: 40px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+html{
+  font-family: 'quicksand', sans-serif;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+p{
+  text-align: center;
+}
+.gallery{
+border: 1px solid black;
+}
+.desc{
+padding: 15px;
+text-align: center;
+font-size: 16px;
+font-weight: bolder;
+color: purple;
+background-color: black;
+opacity: 0.9;
+}
+.table{
+font-size: 14px;
+color: white;
+}
+#table{
+  background:url("images/8.jpg");
+}
+#us a{
+  color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+.order{
+  background: url("images/10.jpg");
+  width: 250px;
+  height: 540px;
+  padding-top: 30px;
+}
+form{
+  width: 240px;
+  text-align: center;
+}
+input{
+width: 170px;
+text-align: center;
+background: transparent;
+border: none;
+border-bottom: 1px solid #fff;
+font-family: 'play', sans-serif;
+font-size: 16px;
+font-weight: 200px;
+padding: 10px 0;
+transition: border 0.5s;
+outline: none;
+color: #fff;
+
+}
+input[type=submit]{
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover{
+color: #fff;
+background-color: purple;
+}
+h2{
+  color: white;
+  text-decoration: underline;
+}
+::placeholder{
+color: white;
+opacity: 0.8;
+}
+.contact{
+  background: url("images/11.jpg");
+  padding-top: 40px;
+  width: 250px;
+  height: 680px;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: white;
+  resize: none;
+  margin-left: 5px;
+}
+h1{
+  text-decoration: underline;
+}
+label{
+  color:white;
+  text-decoration: underline;
+  text-align: center;
+  font-weight: bolder;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa-facebook {
+  color: blue;
+}
+.fa-youtube {
+  color: red;
+}
+
+.fa-twitter {
+  color: blue;
+}
+.fa-instagram {
+  color: purple;
+}
+.fa-snapchat-ghost {
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+a{
+  color: white;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+/* active and dot hover*/
+.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
+</head>
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">
+      ASH CAR
+    </label>
+    <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="Carlisting.html">Carlisting</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="signin.html">Sign in</a></li>
+  <li><a href="signup.html">Sign up</a></li>
+  </ul>
+  </nav>
+
+  <h1 style="text-align:center;padding-top:40px">BMW320I</h1>
+    <div style="padding-top:60px" class="row">
+      <div class="col-3 col-s-3 menu">
+        <h1> BRANDS ON ASH </h1>
+        <br>
+          <div class="mySlides fade">
+            <a href="toyotahome.html">
+            <img src="images/toyotaprado.png" alt="toyotaprado" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="suzukihome.html">
+            <img src="images/suzukivitara.png" alt="suzukivitara" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="subaruhome.html">
+            <img src="images/subaruoutback.png" alt="subaruoutback" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="nissanhome.html">
+            <img src="images/nissannavara.png" alt="nissannavara" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="motorbikehome.html">
+            <img src="images/motorbike.jpg" alt="motorbike" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="sporthome.html">
+            <img src="images/range.jpg" alt="range" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="bmw7home.html">
+            <img src="images/bmw7.png" alt="bmw7" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="bmwhome.html">
+            <img src="images/bmw3.jpg" alt="bmw3" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="tiguanhome.html">
+            <img src="images/volkswagenpolo.png" alt="volkswagenpolo" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+          <div class="mySlides fade">
+              <a href="mercedeshome.html">
+            <img src="images/benzc200.jpg" alt="benzc200" style="max-width:100%;height:auto;">
+          </a>
+          </div>
+
+        <br>
+
+        <!-- The dots-->
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+          <span class="dot" onclick="currentSlide(7)"></span>
+          <span class="dot" onclick="currentSlide(8)"></span>
+          <span class="dot" onclick="currentSlide(9)"></span>
+          <span class="dot" onclick="currentSlide(10)"></span>
+        </div>
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+        </script>
+
+      </div>
+
+    <div class="col-3 col-s-6">
+      <div class="gallery" >
+      <img src="images/bmw320i2.jpg" alt="bmw320i" style="max-width:100%;height:auto;" >
+      <div class="desc">BMW 320I</div>
+    </div><br><br><br>
+
+      <div class="order">
+      <form action="#" target="_blank" method="post" autocomplete="on">
+      <h2 style="color:white">ORDER THIS VEHICLE NOW </h2>
+      <input type="text" id="car" name="car" value="BMW 320I" readonly><br>
+      <input type="text" name="name" placeholder="name" required> <br><br>
+      <input type="email" name="email" placeholder="Email Address" required> <br><br>
+      <input type="tel" name="phone" placeholder="telephone" required> <br> <br>
+      <label for="booking">BOOKING PERIOD </label><br><br>
+        <label for="from">STARTS:</label>
+      <input type="date" id="starts" name="starts"><br>
+      <label for="to">ENDS:</label><br>
+      <input type="date" id="ends" name="ends"><br>
+      <input type="submit" value="submit" > <br><br>
+      </form>
+      </div>
+    </div>
+
+    <div class="col-3 col-s-9">
+      <div class="table">
+      <table id="table" style="width:60%">
+        <tr>
+          <th colspan="2">KSH 8,000 PER DAY</th>
+        </tr>
+        <tr>
+          <td>INTERIOR</td>
+          <td>LEATHER </td>
+        </tr>
+        <tr>
+          <td>YEAR</td>
+          <td>2012</td>
+        </tr>
+        <tr>
+          <td>MILEAGE</td>
+          <td>20,300MI</td>
+        </tr>
+        <tr>
+          <td>ENGINE</td>
+          <td>3000 CC</td>
+        </tr>
+        <tr>
+          <td>TRANSMISSION</td>
+          <td>AUTOMATIC</td>
+        </tr>
+        <tr>
+          <td>FUEL</td>
+          <td>PETROL</td>
+        </tr>
+        <tr>
+          <td>COLORS</td>
+          <td>WHITE</td>
+        </tr>
+        <tr>
+          <td>DRIVE TYPE</td>
+          <td>4 WHEEL DRIVE</td>
+        </tr>
+        <tr>
+          <td>REF NO</td>
+          <td>007</td>
+        </tr>
+      </table>
+      </div>
+
+
+  </div>
+
+  <div class="col-3 col-s-12">
+
+    <div class="contact">
+    <form action="#" target="_blank" method="post" autocomplete="on"> <!--displaying the contact us part for the form-->
+    <div id="us">
+    <h2 style="text-align:center"><a href="contact.html" target="_self">CONTACT US ABOUT THIS CAR</a></h2> <!--displaying the contact us part-->
+  </div><br>
+    <h5 style="color:pink;font-weight:bolder">Making an enquiry enables our
+    team get in touch with you for further advice and follow up. We dont take long to get back.</h5>
+    <input type="text" name="name" placeholder="name"required> <br><br>
+    <input type="email" name="email" placeholder="Email address"required> <br><br>
+    <input type="tel" name="phone" placeholder="telephone"required> <br> <br>
+    <h5 style="color:pink;font-weight:bolder"> other details </h5>
+    <textarea name="comment" rows="10" cols="40" placeholder=""required>
+    </textarea> <br> <br>
+    <input type="Submit" value="Submit" ><br><br>
+    </form>
+    </div>
+
+  </div>
+
+  </div>
+
+  <div style="padding-top:100px" class="row" >
+    <div style="background-color: black;height:620px;" class="col-3 col-s-3 menu">
+      <h2 style="color:white;text-align:center;text-decoration:overline">SOCIAL MEDIA</h2>
+    <p style="text-align:left;color:white;font-size:12px"><a target="_blank" href="#" class="fa fa-facebook"></a>
+      Facebook-Ash Car Rental</p>
+      <p style="text-align:left;color:white;font-size:12px"><a target="_blank" href="#" class="fa fa-youtube"></a>
+        Youtube-Ash Car Rental</p>
+        <p style="text-align:left;color:white;font-size:12px"><a target="_blank" href="#" class="fa fa-twitter"></a>
+          Twitter-@AshCarRental001</p>
+          <p style="text-align:left;color:white;font-size:12px"><a target="_blank" href="#" class="fa fa-instagram"></a>
+            Instagram-ASH_CAR_RENTAL</p>
+            <p style="text-align:left;color:white;font-size:12px"><a target="_blank" href="#" class="fa fa-snapchat-ghost"></a>
+              Snapchat-ASH-CAR-RENTAL</p><br>
+      <i class='fas fa-envelope' style="font-size:14px;color:white;margin-left:20px;">&nbsp;&nbsp;ashcarrental@gmail.com</i><br><br>
+
+    </div>
+
+    <div style="background-color:black;height:620px;" class="col-3 col-s-6">
+  <h2 style="color:white;text-align:center;text-decoration:overline">NAVIGATION BAR</h2>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="index.html">HOME</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="about.html">ABOUT</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="Carlisting.html">CARLISTING</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="gallery.html">GALLERY</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="contact.html">CONTACT</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="signup.html">SIGN UP</a></p>
+  <p style="padding-top:40px;font-size:14px;text-align:center"><a href="signin.html">SIGN IN</a></p>
+
+    </div>
+
+    <div style="background-color:black;height:620px;" class="col-3 col-s-9">
+      <h2 style="color:white;text-align:center;text-decoration:overline">BRANDS ON ASH</h2>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="bmw7home.html">BMW528I</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="bmwhome.html">BMW320I</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="mercedeshome.html">MERCEDES</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="motorbikehome.html">ROYALEINFILED</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="nissanhome.html">NISSAN</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="sporthome.html">RANGE ROVER</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="subaruhome.html">SUBARU</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="suzukihome.html">SUZUKI</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="tiguanhome.html">TIGUAN</a></p>
+      <p style="padding-top:40px;font-size:14px;text-align:center"><a href="toyotahome.html">TOYOTA</a></p>
+      </div>
+
+      <div style="background-color:black;height:620px;" class="col-3 col-s-12">
+        <h2 style="color:white;text-align:center;text-decoration:overline">ABOUT</h2><br>
+      <p style="color:white;font-size:14px">It is an online system through which customers can view available cars and book cars.</P>
+
+  <p style="background-color: black;color: white;text-align: center;font-size: 14px;
+  padding: 15px;"> &copy; 2020 All Rights Reserved. Developed & Designed by PAULINE ONDIEK. </p>
+
+        </div>
+
+      </div>
+
+
+
+</body>
+</html>
